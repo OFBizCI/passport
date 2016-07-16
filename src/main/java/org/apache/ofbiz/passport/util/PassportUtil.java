@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.passport.util;
+package org.apache.ofbiz.passport.util;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
-import org.ofbiz.base.util.Debug;
+import org.apache.ofbiz.base.util.Debug;
 
 public class PassportUtil {
 

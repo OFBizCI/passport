@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.passport.user;
+package org.apache.ofbiz.passport.user;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -25,20 +25,20 @@ import java.util.Properties;
 import java.util.Arrays;
 import java.util.Set;
 
-import org.ofbiz.base.util.UtilProperties;
+import org.apache.ofbiz.base.util.UtilProperties;
 
 /**
- * GitHub UserGroupMapper
+ * LinkedIn UserGroupMapper
  */
-public class GitHubUserGroupMapper {
+public class LinkedInUserGroupMapper {
 
     protected List<String> groups;
 
-    public GitHubUserGroupMapper(String[] groups) {
+    public LinkedInUserGroupMapper(String[] groups) {
         this.groups = Arrays.asList(groups);
     }
 
-    public GitHubUserGroupMapper(String group) {
+    public LinkedInUserGroupMapper(String group) {
         if (groups == null) {
             groups = new ArrayList<String>();
         }
@@ -46,14 +46,14 @@ public class GitHubUserGroupMapper {
     }
 
     public Set<String> getSecurityGroups() {
-        Properties props = UtilProperties.getProperties(GitHubAuthenticator.props);
+        Properties props = UtilProperties.getProperties(LinkedInAuthenticator.props);
 
         Set<String> secGroups = new HashSet<String>();
         boolean running = true;
         int index = 1;
 
         while (running) {
-            String groupStr = (String) props.get("github.group.map." + index);
+            String groupStr = (String) props.get("linkedin.group.map." + index);
             if (groupStr == null) {
                 running = false;
             } else {

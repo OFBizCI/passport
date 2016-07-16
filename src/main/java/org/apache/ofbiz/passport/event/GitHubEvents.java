@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.passport.event;
+package org.apache.ofbiz.passport.event;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -39,26 +39,26 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.ofbiz.passport.user.GitHubAuthenticator;
-import org.ofbiz.passport.util.PassportUtil;
-import org.ofbiz.base.conversion.ConversionException;
-import org.ofbiz.base.conversion.JSONConverters.JSONToMap;
-import org.ofbiz.base.crypto.HashCrypt;
-import org.ofbiz.base.lang.JSON;
-import org.ofbiz.base.util.Debug;
-import org.ofbiz.base.util.UtilHttp;
-import org.ofbiz.base.util.UtilMisc;
-import org.ofbiz.base.util.UtilProperties;
-import org.ofbiz.base.util.UtilValidate;
-import org.ofbiz.common.authentication.api.AuthenticatorException;
-import org.ofbiz.common.login.LoginServices;
-import org.ofbiz.entity.Delegator;
-import org.ofbiz.entity.GenericEntityException;
-import org.ofbiz.entity.GenericValue;
-import org.ofbiz.entity.util.EntityUtil;
-import org.ofbiz.entity.util.EntityUtilProperties;
-import org.ofbiz.product.store.ProductStoreWorker;
-import org.ofbiz.service.LocalDispatcher;
+import org.apache.ofbiz.passport.user.GitHubAuthenticator;
+import org.apache.ofbiz.passport.util.PassportUtil;
+import org.apache.ofbiz.base.conversion.ConversionException;
+import org.apache.ofbiz.base.conversion.JSONConverters.JSONToMap;
+import org.apache.ofbiz.base.crypto.HashCrypt;
+import org.apache.ofbiz.base.lang.JSON;
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.base.util.UtilHttp;
+import org.apache.ofbiz.base.util.UtilMisc;
+import org.apache.ofbiz.base.util.UtilProperties;
+import org.apache.ofbiz.base.util.UtilValidate;
+import org.apache.ofbiz.common.authentication.api.AuthenticatorException;
+import org.apache.ofbiz.common.login.LoginServices;
+import org.apache.ofbiz.entity.Delegator;
+import org.apache.ofbiz.entity.GenericEntityException;
+import org.apache.ofbiz.entity.GenericValue;
+import org.apache.ofbiz.entity.util.EntityUtil;
+import org.apache.ofbiz.entity.util.EntityUtilProperties;
+import org.apache.ofbiz.product.store.ProductStoreWorker;
+import org.apache.ofbiz.service.LocalDispatcher;
 
 /**
  * GitHubEvents - Events for GitHub login.

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.passport.user;
+package org.apache.ofbiz.passport.user;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -27,20 +27,20 @@ import java.sql.Timestamp;
 
 import javax.transaction.Transaction;
 
-import org.ofbiz.passport.event.GitHubEvents;
-import org.ofbiz.passport.user.GitHubUserGroupMapper;
-import org.ofbiz.passport.util.PassportUtil;
-import org.ofbiz.common.authentication.api.Authenticator;
-import org.ofbiz.common.authentication.api.AuthenticatorException;
-import org.ofbiz.service.LocalDispatcher;
-import org.ofbiz.service.GenericServiceException;
-import org.ofbiz.service.ServiceUtil;
-import org.ofbiz.entity.Delegator;
-import org.ofbiz.entity.GenericValue;
-import org.ofbiz.entity.GenericEntityException;
-import org.ofbiz.entity.transaction.TransactionUtil;
-import org.ofbiz.entity.transaction.GenericTransactionException;
-import org.ofbiz.entity.util.EntityUtil;
+import org.apache.ofbiz.passport.event.GitHubEvents;
+import org.apache.ofbiz.passport.user.GitHubUserGroupMapper;
+import org.apache.ofbiz.passport.util.PassportUtil;
+import org.apache.ofbiz.common.authentication.api.Authenticator;
+import org.apache.ofbiz.common.authentication.api.AuthenticatorException;
+import org.apache.ofbiz.service.LocalDispatcher;
+import org.apache.ofbiz.service.GenericServiceException;
+import org.apache.ofbiz.service.ServiceUtil;
+import org.apache.ofbiz.entity.Delegator;
+import org.apache.ofbiz.entity.GenericValue;
+import org.apache.ofbiz.entity.GenericEntityException;
+import org.apache.ofbiz.entity.transaction.TransactionUtil;
+import org.apache.ofbiz.entity.transaction.GenericTransactionException;
+import org.apache.ofbiz.entity.util.EntityUtil;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -48,14 +48,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.ofbiz.base.conversion.ConversionException;
-import org.ofbiz.base.conversion.JSONConverters.JSONToMap;
-import org.ofbiz.base.lang.JSON;
-import org.ofbiz.base.util.UtilProperties;
-import org.ofbiz.base.util.Debug;
-import org.ofbiz.base.util.UtilMisc;
-import org.ofbiz.base.util.UtilDateTime;
-import org.ofbiz.base.util.UtilValidate;
+import org.apache.ofbiz.base.conversion.ConversionException;
+import org.apache.ofbiz.base.conversion.JSONConverters.JSONToMap;
+import org.apache.ofbiz.base.lang.JSON;
+import org.apache.ofbiz.base.util.UtilProperties;
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.base.util.UtilMisc;
+import org.apache.ofbiz.base.util.UtilDateTime;
+import org.apache.ofbiz.base.util.UtilValidate;
 
 /**
  * GitHub OFBiz Authenticator
@@ -94,7 +94,7 @@ public class GitHubAuthenticator implements Authenticator {
      * @param password      User's password
      * @param isServiceAuth true if authentication is for a service call
      * @return true if the user is authenticated
-     * @throws org.ofbiz.common.authentication.api.AuthenticatorException
+     * @throws org.apache.ofbiz.common.authentication.api.AuthenticatorException
      *          when a fatal error occurs during authentication
      */
     public boolean authenticate(String userLoginId, String password, boolean isServiceAuth) throws AuthenticatorException {
@@ -130,7 +130,7 @@ public class GitHubAuthenticator implements Authenticator {
      * Logs a user out
      *
      * @param username User's username
-     * @throws org.ofbiz.common.authentication.api.AuthenticatorException
+     * @throws org.apache.ofbiz.common.authentication.api.AuthenticatorException
      *          when logout fails
      */
     public void logout(String username) throws AuthenticatorException {
@@ -140,7 +140,7 @@ public class GitHubAuthenticator implements Authenticator {
      * Reads user information and syncs it to OFBiz (i.e. UserLogin, Person, etc)
      *
      * @param userLoginId
-     * @throws org.ofbiz.common.authentication.api.AuthenticatorException
+     * @throws org.apache.ofbiz.common.authentication.api.AuthenticatorException
      *          user synchronization fails
      */
     public void syncUser(String userLoginId) throws AuthenticatorException {
@@ -333,7 +333,7 @@ public class GitHubAuthenticator implements Authenticator {
      * @param username    User's username
      * @param password    User's current password
      * @param newPassword User's new password
-     * @throws org.ofbiz.common.authentication.api.AuthenticatorException
+     * @throws org.apache.ofbiz.common.authentication.api.AuthenticatorException
      *          when update password fails
      */
     public void updatePassword(String username, String password, String newPassword) throws AuthenticatorException {
